@@ -1,0 +1,27 @@
+.app {
+  display: flex;
+  height:3000px;
+}
+
+.left-scroll-content {
+  flex: 1;
+  overflow: hidden;
+  
+}
+
+.left-content {
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.right-static-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.right-content {
+  max-width: 400px;
+  margin: 0 auto;
+  height: 500px;
+}
