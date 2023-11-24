@@ -1,5 +1,14 @@
 /*//////////////////////////////////////////////Header////////////////////////////////////*/
 
+:root{
+    --primary-color: #6c36f0;
+    --secondary-color: #f5f5f5;
+}
+body {
+    transition: background-color 1s ease-in-out;
+  }
+  
+
 .signup{
     background-color: #6c36f0;
     color: white;
@@ -60,6 +69,14 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+
+}
+.mainSection a{
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 .mainHeading{
@@ -138,6 +155,7 @@
         display: flex;
         justify-content: flex-start;
         gap: 20px;
+        margin-top: 100px;
         
     }
     .sliderContainerLeft{
@@ -168,7 +186,10 @@
         border: 5px solid rgb(178, 171, 171);
     }
     .sliderImage{
-        transition: opacity 5s ease-in-out;
+        transition: opacity 9s ease-in-out;
+    }
+    .sliderImage.hidden {
+        opacity: 0.9;
     }
 
     /*Slider Content Left*/
@@ -178,9 +199,13 @@
         width: 100%;
      
     }
+   
+      .sliderContainerLeftContent h1,
+      .sliderContainerLeftContent p {
+        transition: color 0.5s ease-in-out;
+      }
     .sliderContainerLeftContent h1{
         margin-top: 30px;
-        color: rgb(212, 65, 60);
         font-size: 27px;
 
 
@@ -189,11 +214,11 @@
         margin-top: 23px;
         font-weight: 500;
         font-size: 45px;
+
     }
     .sliderContainerLeftContent p:nth-of-type(2){
         font-weight: 300;
         font-size: 20px;
-        color: grey;
     }
 
 /*********************************************************************************************************/
@@ -235,3 +260,155 @@
     width: 34px;
     height: auto;
 }
+
+
+/*//////////////////////////////////////////Signup Form//////////////////////////////////////*/
+
+.signUpForm{
+    width: 30%;
+    height: 100vh;
+    min-width: 400px;
+    margin: auto;
+}
+.signUpFormContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;  
+}
+
+
+.signUpFormContainer .logo{
+    width: 100%;
+    height:15%;
+    
+}
+
+    
+ .signUpFormContainer .signUpHeading{
+    width: 100%;
+    text-align: center;
+    height: 10%;
+ }
+
+ /*********Sign up with goole***********/
+ .signUpFormContainer .continueWithGoogle{
+    margin-bottom: 15px;
+    
+    width: 97%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid rgb(199, 163, 42);
+    height: 6%;
+    font-size: 20px;
+    text-decoration: none;
+    border: 1px solid #f5f5f5;
+    border-radius: 9px;
+   
+
+ }
+ .signUpFormContainer .continueWithGoogle:hover{
+    background-color: #f5f5f5;
+    cursor: pointer;
+ }
+ 
+ /*********Email and Password form***********/
+
+ .signUpFormContainer .emailAndPassword{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-direction: column;
+    height: 40%;
+    width: 100%;
+
+ }
+ /*Email input box*/
+ .signUpFormContainer .emailAndPassword .email{
+    border-radius: 8px;
+    width: 92%;
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    border:1px solid #d4cfcf;
+    margin-top: 10px;
+    margin-bottom: 15px;
+ }
+.signUpFormContainer .emailAndPassword .email input{
+        border: none;
+        outline: none;
+}
+/*Password input box*/
+.signUpFormContainer .emailAndPassword .password{
+    margin-bottom: 15px;
+
+    border-radius: 8px;
+    width: 92%;
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    border:1px solid #d4cfcf;
+    margin-top: 10px;
+ }
+ .signUpFormContainer .emailAndPassword .password .passwordInput{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+
+.signUpFormContainer .emailAndPassword .password input{
+        border: none;
+        outline: none;
+}
+.signUpFormContainer .emailAndPassword .password .passwordInput .passwordIcon{
+    width: 25px;
+    height: auto;
+    cursor: pointer;
+ }
+
+  /*********Sign up button***********/
+  .signUpFormContainer .emailAndPassword a{
+    margin-bottom: 15px;
+
+    width: 95%;
+    height: 22%;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    color: white;
+    font-weight: 500;
+    border: 2px solid 6c36f0;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 7px;
+    background-color: rgb(108, 54, 240);
+    margin-top: 15px;
+    transition: all 0.3s ease-in-out;
+  }
+  .signUpFormContainer .emailAndPassword a:hover{
+    background-color: rgb(83, 38, 195);
+
+ 
+  }
+   /*********Terms of serive***********/
+  .signUpFormContainer .termsOfService{
+    width: 93%;
+    height: 8%;
+  }
+  .signUpFormContainer .termsOfService a{
+    color: rgb(91, 90, 90);
+  }
+ .signUpFormContainer .alreadySignUp p{
+    font-size: 18px;
+
+ }
+
+
+
+
+
+
+        

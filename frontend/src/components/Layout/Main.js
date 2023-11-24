@@ -7,10 +7,13 @@ import imageOne from '../../assets/stayOrganized.png';
 import imageTwo from '../../assets/boostProductivity.png';
 import imageThree from '../../assets/connect.png';
 import imageFour from '../../assets/celebrate.png';
+import { Link } from 'react-router-dom'
+
 
 
 
 const Main = () => {
+  
   let [height, setHeight] = useState(1010);
   let [top, setTop] = useState(300);
   let [image,setImage]=useState(imageOne);
@@ -20,6 +23,7 @@ const Main = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      
       const scrollPoints = [
         { image: imageOne, scrollY: 1600 },
         { image: imageTwo, scrollY: 2200 },
@@ -53,21 +57,23 @@ const Main = () => {
     };
   }, [height, top]);
 
+  
+
 
 
 
   
   return (
     <>
-      <div className="container ">
-        <div className="row col-xl-6 col-md-12 col-sm-11 col-10 mainSection">
+      <div className="container"  >
+        <div className="row col-xl-6 col-md-12 col-sm-11 col-10 mainSection" >
           <h1 className="mainHeading">Effortlessly organize your world,<br></br>
             one task at a time.</h1>
           <p className="subHeading">Experience the effortless flow of productivity with TaskHarmony,<br></br> your partner in achieving more, stress-free</p>
-          <button className="mainBtn">Sign up</button>
+          <Link to="/signup"><button className="mainBtn">Sign up</button></Link> 
         </div>
       </div>
-      <div className="startingVideoContainer" style={{height:`${height}px`}}>
+      <div className="startingVideoContainer universal" >
         <div className='backgroundImageWrapper'>
         <img src={background} alt='background' className='backgroundImg'></img>
         </div>
@@ -77,7 +83,7 @@ const Main = () => {
 
 
       </div>
-      <div className="sliderContainer">
+      <div className="sliderContainer" >
       <div className="sliderContainerLeft">
         <MiddleContent/>
         
