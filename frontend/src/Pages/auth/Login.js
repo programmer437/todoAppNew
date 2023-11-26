@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FcGoogle } from "react-icons/fc";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import axios from 'axios';
@@ -8,9 +8,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import {success, error,Toast} from '../../components/Helpers/Toast';
 import ButtonSpinner from '../../components/Helpers/ButtonSpinner';
 
-
-
-const Signup = () => {
+const Login = () => {
+    const location = useLocation();
     const navigate = useNavigate();
 
     const [loading, setLoading] = useState(false);
@@ -32,12 +31,12 @@ const Signup = () => {
     const handleSignUp = (e) => {
         e.preventDefault();
         setLoading(true);
-        axios.post('http://localhost:3001/api/v1/auth/signup', data)
+        axios.post('http://localhost:3001/api/v1/auth/login', data,{withCredentials: true})
             .then(res => {
                 setLoading(false);
                 success(res.data.msg);
                 setTimeout(() => {
-                    navigate('/login');
+                    navigate(location.state || '/privateRoute/dashboard');
                 }, 2020);
             })
             .catch(err => {
@@ -51,12 +50,11 @@ const Signup = () => {
             })
     }
 
-
-    return (
-        <div className='signUpForm'>
-            <div className="signUpFormContainer">
+  return (
+    <div className='loginForm'>
+            <div className="loginFormContainer">
                 <h1 className="logo">Logo</h1>
-                <h1 className="signUpHeading">SignUp</h1>
+                <h1 className="loginFormHeading">Login</h1>
                 <Link className="continueWithGoogle"><FcGoogle />Continue With Google</Link>
                 <form className="emailAndPassword" onSubmit={handleSignUp}>
                     <div className="email">
@@ -94,11 +92,12 @@ const Signup = () => {
                     </div>
                     <button className="SubmitButton" disabled={loading} >
                         {loading ? <ButtonSpinner />
-                            : "Sign Up"
+                            : "Login"
                         }
                     </button>
 
                 </form>
+                <Link className="forgotPassword" to="/forgot-password">Forgot Password?</Link>
                 <p className="termsOfService">
                     By signing up, you agree to our
                     <Link> Terms of Service </Link>
@@ -112,8 +111,7 @@ const Signup = () => {
             
 
         </div>
-
-    )
+  )
 }
 
-export default Signup;
+export default Login

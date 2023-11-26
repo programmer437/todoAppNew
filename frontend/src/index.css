@@ -361,6 +361,7 @@ body {
 
 .signUpFormContainer .emailAndPassword .password input{
         border: none;
+        width: 90%;
         outline: none;
 }
 .signUpFormContainer .emailAndPassword .password .passwordInput .passwordIcon{
@@ -370,7 +371,7 @@ body {
  }
 
   /*********Sign up button***********/
-  .signUpFormContainer .emailAndPassword a{
+  .signUpFormContainer .emailAndPassword button{
     margin-bottom: 15px;
 
     width: 95%;
@@ -388,23 +389,184 @@ body {
     margin-top: 15px;
     transition: all 0.3s ease-in-out;
   }
-  .signUpFormContainer .emailAndPassword a:hover{
-    background-color: rgb(83, 38, 195);
+  .signUpFormContainer .emailAndPassword button:hover{
+    background-color: #5326c3;
 
  
   }
+  .signUpFormContainer .emailAndPassword button .spinner-border {
+    color: white !important;
+  }
+
+  /*//////////////////////////////////////////Login Form//////////////////////////////////////*/
+  .loginForm{
+    width: 30%;
+    height: 100vh;
+    min-width: 400px;
+    margin: auto;
+}
+.loginFormContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;  
+}
+
+
+.loginFormContainer .logo{
+    width: 100%;
+    height:15%;
+    
+}
+
+    
+ .loginFormContainer .loginFormHeading{
+    width: 100%;
+    text-align: center;
+    height: 10%;
+ }
+
+ /*********Sign up with goole***********/
+ .loginFormContainer .continueWithGoogle{
+    margin-bottom: 15px;
+    
+    width: 97%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid rgb(199, 163, 42);
+    height: 6%;
+    font-size: 20px;
+    text-decoration: none;
+    border: 1px solid #f5f5f5;
+    border-radius: 9px;
+   
+
+ }
+ .loginFormContainer .continueWithGoogle:hover{
+    background-color: #f5f5f5;
+    cursor: pointer;
+ }
+ 
+ /*********Email and Password form***********/
+
+ .loginFormContainer .emailAndPassword{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-direction: column;
+    height: 40%;
+    width: 100%;
+
+ }
+ /*Email input box*/
+ .loginFormContainer .emailAndPassword .email{
+    border-radius: 8px;
+    width: 92%;
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    border:1px solid #d4cfcf;
+    margin-top: 10px;
+    margin-bottom: 15px;
+ }
+.loginFormContainer .emailAndPassword .email input{
+        border: none;
+        outline: none;
+}
+/*Password input box*/
+.loginFormContainer .emailAndPassword .password{
+    margin-bottom: 15px;
+
+    border-radius: 8px;
+    width: 92%;
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    border:1px solid #d4cfcf;
+    margin-top: 10px;
+ }
+ .loginFormContainer .emailAndPassword .password .passwordInput{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+
+.loginFormContainer .emailAndPassword .password input{
+        border: none;
+        width: 90%;
+        outline: none;
+}
+.loginFormContainer .emailAndPassword .password .passwordInput .passwordIcon{
+    width: 25px;
+    height: auto;
+    cursor: pointer;
+ }
+
+  /*********Sign up button***********/
+  .loginFormContainer .emailAndPassword button{
+    margin-bottom: 15px;
+
+    width: 95%;
+    height: 22%;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    color: white;
+    font-weight: 500;
+    border: 2px solid 6c36f0;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 7px;
+    background-color: rgb(108, 54, 240);
+    margin-top: 15px;
+    transition: all 0.3s ease-in-out;
+  }
+  .loginFormContainer .emailAndPassword button:hover{
+    background-color: #5326c3;
+
+ 
+  }
+  .loginFormContainer .emailAndPassword button .spinner-border {
+    color: white !important;
+  }
+
+
+
+
    /*********Terms of serive***********/
-  .signUpFormContainer .termsOfService{
+  .loginFormContainer .termsOfService{
     width: 93%;
     height: 8%;
   }
-  .signUpFormContainer .termsOfService a{
+  .loginFormContainer .termsOfService a{
     color: rgb(91, 90, 90);
   }
- .signUpFormContainer .alreadySignUp p{
+ .loginFormContainer .alreadySignUp p{
     font-size: 18px;
 
  }
+
+
+
+
+ .spinner {
+    animation-name: spin;
+    animation-duration: 500ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
 
 
 

@@ -25,39 +25,38 @@ const signup= async (req,res)=>{
             res.status(500).json({ error: 'An error occurred.' });
     }
 }
-// const login= async (req,res)=>{
-//     try {
-//         const {email,password}=req.body;
-//         const user= await User.findOne({email});
-//         if(!user){
-//             return res.status(404).json({msg: "User Does not exist"});
-//         }
+const login= async (req,res)=>{
+    try {
+        const {email,password}=req.body;
+        const user= await User.findOne({email});
+        if(!user){
+            return res.status(404).json({msg: "User Does not exist"});
+        }
 
-//         const passwordOk= await comparePassword(password,user.password) ;
-//         if(!passwordOk){
-//             return res.status(404).json({msg:"Check your password or email"});
-//         }
+        const passwordOk= await comparePassword(password,user.password) ;
+        if(!passwordOk){
+            return res.status(404).json({msg:"Check your password or email"});
+        }
 
         
             
-//             const payload = {
-//                 user: user.id // Assuming user.id is the MongoDB ObjectId
-//               };
-//             const token = jwt.sign(payload, process.env.SECRET_KEY, {
-//                 expiresIn: '1h', // Token expiration time
-//             });
-//             res.cookie('token', token, {
-//                 httpOnly: true,
-//                 maxAge: 1000 *60*60, // 1 hour
-//               });
+            console.log(user);
+            const token = jwt.sign({user:user._id}, process.env.SECRET_KEY, {
+                expiresIn: '1h', // Token expiration time
+            });
+            res.cookie('token', token, {
+                httpOnly: false,
+                maxAge: 1000 *60*60, // 1 hour
+              });
+
               
               
-//             res.status(201).json({ token, msg: 'Log in Successful' });
+            res.status(201).json({ token, msg: 'Log in Successful' });
         
-//     } catch (error) {
-//         res.status(500).json({msg:"An error occured"});
-//     }
-// }
+    } catch (error) {
+        res.status(500).json({msg:"An error occured"});
+    }
+}
 // const deleteUser=async (req,res)=>{
 //     try {
 //         const {email,password}=req.body;
@@ -96,7 +95,7 @@ const signup= async (req,res)=>{
 
 module.exports={
     signup,
-    //login,
+    login,
     // deleteUser,
     // logout
 };

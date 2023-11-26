@@ -5,9 +5,17 @@ const cors = require('cors');
 const connect= require("./config/db/connect");
 const userRoute = require("./routes/users");
 const morgan = require('morgan');
+const cookieParser = require('cookie-parser');
 
 dotenv.config();
-app.use(cors());
+const corsOptions = {
+    origin: 'http://localhost:3000', // Replace with your frontend's URL
+    credentials: true,
+     // This allows cookies to be sent in cross-origin requests
+  };
+
+app.use(cookieParser());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use(morgan("dev")); 
