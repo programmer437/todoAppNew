@@ -5,7 +5,8 @@ import Signup from "./Pages/auth/Signup";
 import Login from "./Pages/auth/Login";
 import PrivateRoute from "./components/Helpers/PrivateRoute";
 import Dashboard from "./Pages/user/Dashboard";
-import Today from './Pages/user/Dashboard/Today';
+import Today from './Pages/user/Dashboard/ListBoxContent/Today'
+import Upcoming from './Pages/user/Dashboard/ListBoxContent/Upcoming'
 
 // Define the main App component
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Route path="/privateRoute" element={<PrivateRoute />} >
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="dashboard/today" element={<Today />} />
+        <Route path="dashboard/upcoming" element={<Upcoming />} />
       </Route>
       <Route path="/login" element={<Login />} />
 
